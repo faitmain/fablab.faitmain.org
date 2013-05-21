@@ -3,4 +3,5 @@
 var fablabs = [
   [48.8567, 2.3508, "Tarek's House <a href='http://ziade.org'>http://ziade.org</a>"],
   [48.5345, 2.2313, "<a href='http://www.cite-sciences.fr/fr/carrefour-numerique'>Carrefour Numerique</a>"],
+  [51.330364, 12.330839, "<a href='http://www.sublab.org/'>sublab</a>"],
 ]
