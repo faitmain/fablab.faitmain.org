@@ -2,5 +2,6 @@
 // the two first values are your coordinates and the third the popup text.
 var fablabs = [
   [48.8567, 2.3508, "Tarek's House <a href='http://ziade.org'>http://ziade.org</a>"],
+  [49.0954485, 6.245274, "<a href='http://www.graoulab.org/'>GraouLab</a> - Metz"],
 
 ]
