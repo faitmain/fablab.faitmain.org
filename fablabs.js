@@ -7,5 +7,7 @@ var fablabs = [
   [44.915676, 4.915261, "<a href='http://l0ad.org/'>L0ad</a>"],
   [47.22933, -1.58458, "<a href='http://www.pingbase.net/'>PiNG</a>"],
   [47.2217115, -1.5572179, "<a href='http://naohack.org/'>Naohack</a>"],
-  [47.32303, 5.04036, "<a href='http://coagul.org/drupal/association/presentation-fablab-labscisse'>L'abscisse</a>"]
+  [47.32303, 5.04036, "<a href='http://coagul.org/drupal/association/presentation-fablab-labscisse'>L'abscisse</a>"],
+  [48.106679, -1.651168, "<a href='http://breizh-entropy.org/'>Breizh Entropy</a>"],
+  [48.114706, -1.677212, "<a href='http://labfab.fr/'>Labfab</a>"]
 ]
