@@ -6,6 +6,6 @@ var fablabs = [
   [51.330364, 12.330839, "<a href='http://www.sublab.org/'>sublab</a>"],
   [44.915676, 4.915261, "<a href='http://l0ad.org/'>L0ad</a>"],
   [47.22933, -1.58458, "<a href='http://www.pingbase.net/'>PiNG</a>"],
-  [47.221756,-1.556317, "<a href='http://naohack.org/'>Naohack</a>"],
+  [47.2217115, -1.5572179, "<a href='http://naohack.org/'>Naohack</a>"],
   [47.32303, 5.04036, "<a href='http://coagul.org/drupal/association/presentation-fablab-labscisse'>L'abscisse</a>"]
 ]
