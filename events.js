@@ -27,6 +27,6 @@ function _sort(ev1, ev2) {
   return 0;
 }
 
-    events.sort(_sort);
+events.sort(_sort);
 
 
