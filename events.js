@@ -5,6 +5,10 @@
 // the fourth the URL
 var events = [
  [2, '2013-06-07', 'Apéro Pi - Metz (aPiro)', 'http://www.raspberrypi.org/phpBB3/viewtopic.php?f=65&t=39940'],
+ [-1, '2013-06-16', 'le POOP', 'http://wiki.leloop.org/index.php/POOP'],
+ [-1, '2013-06-23', 'Pas Sage En Seine', 'http://www.passageenseine.org/Passage/pses-2013'],
+ [-1, '2013-06-22', 'Open Bidouille Camp', 'http://openbidouille.net'],
+ [-1, '2013-07-08', 'SummerLab 2013', 'http://summerlabnantes.net']
  ]
 
 var weekday = new Array(7);
