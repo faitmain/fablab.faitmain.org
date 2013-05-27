@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="pragma" content="no-cache" />  
-    <title>Europeans FabLabs - faitmain.org</title>
+    <meta http-equiv="pragma" content="no-cache" /> 
+    <meta charset="utf-8">
+    <title>Europeans FabLabs & Hacker Spaces - faitmain.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
     <link rel="stylesheet" href="style.css"/>
     <script src="fablabs.js"></script>
+    <script src="events.js"></script>
+    <script src="jquery.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
 </head>
 <body>
     <header>
-        <h1>Europeans FabLabs</h1>
+        <h1>Europeans FabLabs & Hacker spaces</h1>
         <div class="infos">
-            To add your FabLab to the map, edit <a
-            href="https://github.com/faitmain/fablab.faitmain.org/blob/master/fablabs.js">this
-            file</a> on Github and ask for a pull
-            request.
+          <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/fablabs.js">Add your space</a> |
+          <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/events.js">Add your event.</a> 
+        </div>
+        <h2>Events</h2>
+        <div class="infos">
+          <ul id="events">
+          </ul>  
         </div>
     </header>
     <div id="map"></div>
@@ -29,9 +35,27 @@
 
     // fablabs 
     for (var i = 0; i < fablabs.length; i++) {
-    var fablab = fablabs[i];
-    var marker = L.marker([fablab[0], fablab[1]]).addTo(map);
-        marker.bindPopup(fablab[2]).openPopup();
+      var fablab = fablabs[i];
+      var marker = L.marker([fablab[1], fablab[2]]).addTo(map);
+      marker.bindPopup(fablab[3]).openPopup();
+    }
+
+    // events
+    events.sort(_sort);
+    if (events.length > 20) {
+      var max_event = 20;
+    }
+    else {
+      var max_event = events.length;
+    }
+
+    for (var i = 0; i < max_event; i++) {
+      var event = events[i];
+      var evdate = new Date(event[1]);
+      var evdatestr = weekday[evdate.getDay()] + ' ' + evdate.getDate() + ' ' +
+                      monthNames[evdate.getMonth()] + ' ' + evdate.getFullYear() 
+                      $('#events').append('<li>' + evdatestr + ' - ' + 
+                      '<a href="' + event[3] + '">' + event[2] + '</a></li>');
     }
     </script>
 </body>
