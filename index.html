@@ -57,9 +57,9 @@
     // fablabs
     for (var i = 0; i < fablabs.length; i++) {
       var fablab = fablabs[i];
-      var loc = new L.LatLng(fablab[1], fablab[2]); 
+      var loc = new L.LatLng(fablab.lat, fablab.lon); 
       var marker = new L.Marker(loc);
-      marker.desc = fablab[3];
+      marker.desc = fablab.desc;
       map.addLayer(marker);
       oms.addMarker(marker); 
     }
