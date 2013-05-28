@@ -34,12 +34,17 @@
     </header>
     <div id="map"></div>
     <script>
+        window.onload = function() {
+
+      // map & layout
+      credits = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
+
       var layer = new L.StamenTileLayer('watercolor');
-      var map = L.map('map').setView([48.8567, 2.3508], 5);
+      var map = L.map('map', {attributionControl: false}).setView([48.8567, 2.3508], 5);
+      map.addControl(new L.Control.Attribution({prefix: credits}));
       map.addLayer(layer);
-
       var oms = new OverlappingMarkerSpiderfier(map);
-
+      
       credits = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 
      // popup
@@ -63,8 +68,7 @@
     // events 
     $("#eventCalendarHumanDate").eventCalendar({jsonDateFormat: 'human', 
                                                 jsonData: events});
-
-
+   }
     </script>
 </body>
 </html>
