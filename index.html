@@ -6,10 +6,16 @@
     <title>Europeans FabLabs & Hacker Spaces - faitmain.org</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+
+    <link rel="stylesheet" href="eventCalendar.css"/>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="eventCalendar_theme.css"/>
+    <link rel="stylesheet" href="eventCalendar_theme_responsive.css"/>
     <script src="fablabs.js"></script>
     <script src="events.js"></script>
     <script src="jquery.js"></script>
+    <script src="jquery.eventCalendar.js"></script>
+    <script src="jquery.timeago.js"></script>
     <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.1"></script>
     <script src="oms.min.js"></script>
@@ -19,14 +25,12 @@
         <h1>Europeans FabLabs & Hacker spaces</h1>
         <div class="infos">
           <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/fablabs.js">Add your space</a> |
-          <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/events.js">Add your event.</a> |
+          <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/events.js">Add your event</a> |
           <a href="mailto:tarek@faitmain.org">Contact</a>
         </div>
         <h2>Events</h2>
-        <div class="infos">
-          <ul id="events">
-          </ul>  
-        </div>
+
+        <div id="eventCalendarHumanDate"></div>
     </header>
     <div id="map"></div>
     <script>
@@ -38,12 +42,7 @@
 
       credits = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 
-      L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        attribution: credits
-    }).addTo(map);
-
-    // popup
+     // popup
      var popup = new L.Popup({closeButton: false, offset: new L.Point(0.5, -24)});
      oms.addListener('click', function(marker) {
           popup.setContent(marker.desc);
@@ -52,7 +51,6 @@
        });
 
     // fablabs
-    var bounds = new L.LatLngBounds();
     for (var i = 0; i < fablabs.length; i++) {
       var fablab = fablabs[i];
       var loc = new L.LatLng(fablab[1], fablab[2]); 
@@ -61,25 +59,12 @@
       map.addLayer(marker);
       oms.addMarker(marker); 
     }
-     map.fitBounds(bounds);
 
-    // events
-    events.sort(_sort);
-    if (events.length > 20) {
-      var max_event = 20;
-    }
-    else {
-      var max_event = events.length;
-    }
+    // events 
+    $("#eventCalendarHumanDate").eventCalendar({jsonDateFormat: 'human', 
+                                                jsonData: events});
 
-    for (var i = 0; i < max_event; i++) {
-      var event = events[i];
-      var evdate = new Date(event[1]);
-      var evdatestr = weekday[evdate.getDay()] + ' ' + evdate.getDate() + ' ' +
-                      monthNames[evdate.getMonth()] + ' ' + evdate.getFullYear() 
-                      $('#events').append('<li>' + evdatestr + ' - ' + 
-                      '<a href="' + event[3] + '">' + event[2] + '</a></li>');
-    }
+
     </script>
 </body>
 </html>
