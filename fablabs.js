@@ -10,5 +10,6 @@ var fablabs = [
   {'lat': 48.106679, 'lon': -1.651168, 'desc': "<a href='http://breizh-entropy.org/'>Breizh Entropy</a>"},
   {'lat': 48.114706, 'lon': -1.677212, 'desc': "<a href='http://labfab.fr/'>Labfab</a>"},
   {'lat': 48.019401, 'lon': 0.157092, 'desc': "<a href='http://haum.org/'>HAUM</a>"},
-  {'lat': 48.935814, 'lon': 2.303212, 'desc': "<a href='http://faclab.org/'>FacLab</a>"}
+  {'lat': 48.935814, 'lon': 2.303212, 'desc': "<a href='http://faclab.org/'>FacLab</a>"},
+  {'lat': 43.593975, 'lon': 1.421484, 'desc': "<a href='http://artilect.fr/'>Artilect</a>"}
 ]
