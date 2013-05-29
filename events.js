@@ -24,5 +24,10 @@ var events = [
    'type': 'meeting', 
    'title': 'SummerLab 2013', 
    'url': 'http://summerlabnantes.net'},
+   
+  {'date': '2013-07-31 09:00:00', 
+   'type': 'meeting', 
+   'title': 'OHM2013', 
+   'url': 'https://ohm2013.org'},
 ]
 
