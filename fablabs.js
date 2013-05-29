@@ -1,6 +1,6 @@
 // add a line into this Array
 var fablabs = [
-  {'lat': 48.5345, 'lon': 2.2313, 'desc': "<a href='http://www.cite-sciences.fr/fr/carrefour-numerique'>Carrefour Numerique</a>"},
+  {'lat': 48.896014, 'lon': 2.38746, 'desc': "<a href='http://www.cite-sciences.fr/fr/carrefour-numerique'>Carrefour Numerique</a>"},
   {'lat':49.0954485, 'lon': 6.245274, 'desc': "<a href='http://www.graoulab.org/'>GraouLab</a>"},
   {'lat': 51.330364, 'lon': 12.330839, 'desc': "<a href='http://www.sublab.org/'>sublab</a>"},
   {'lat': 44.915676, 'lon': 4.915261, 'desc': "<a href='http://l0ad.org/'>L0ad</a>"},
