@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="eventCalendar_theme.css"/>
     <link rel="stylesheet" href="eventCalendar_theme_responsive.css"/>
+
     <script src="fablabs.js"></script>
     <script src="events.js"></script>
     <script src="jquery.js"></script>
@@ -19,12 +20,14 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
     <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.1"></script>
     <script src="oms.min.js"></script>
+    <script src="OverPassLayer.js"></script>
+
 </head>
 <body>
     <header>
         <h1>Europeans FabLabs & Hacker spaces</h1>
         <div class="infos">
-          <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/fablabs.js">Add your space</a> |
+          <a href="http://wiki.openstreetmap.org/wiki/Tag:leisure%3Dhackerspace">Add your space</a> |
           <a href="https://github.com/faitmain/fablab.faitmain.org/blob/master/events.js">Add your event</a> |
           <a href="mailto:tarek@faitmain.org">Contact</a>
         </div>
@@ -35,6 +38,11 @@
     <script>
         window.onload = function() {
 
+
+      // get the overpass data
+    
+
+
       // map & layout
       credits = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.';
 
@@ -42,32 +50,29 @@
       var map = L.map('map', {attributionControl: false}).setView([48.8567, 2.3508], 5);
       map.addControl(new L.Control.Attribution({prefix: credits}));
       map.addLayer(layer);
-      var oms = new OverlappingMarkerSpiderfier(map);
+      var _oms = new OverlappingMarkerSpiderfier(map);
       
       credits = 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'
 
      // popup
      var popup = new L.Popup({closeButton: false, offset: new L.Point(0.5, -24)});
-     oms.addListener('click', function(marker) {
+     _oms.addListener('click', function(marker) {
           popup.setContent(marker.desc);
           popup.setLatLng(marker.getLatLng());
           map.openPopup(popup);
        });
 
-    // fablabs
-    for (var i = 0; i < fablabs.length; i++) {
-      var fablab = fablabs[i];
-      var loc = new L.LatLng(fablab.lat, fablab.lon); 
-      var marker = new L.Marker(loc);
-      marker.desc = fablab.desc;
-      map.addLayer(marker);
-      oms.addMarker(marker); 
-    }
+
+    // fablabs & hackerspaces
+    var url = 'http://overpass-api.de/api/interpreter?data=[out:json];node["leisure"="hackerspace"];out;'
+    var opl = new L.OverPassLayer({map: map, oms: _oms, query: url});
 
     // events 
     $("#eventCalendarHumanDate").eventCalendar({jsonDateFormat: 'human', 
-                                                jsonData: events});
-   }
+    jsonData: events})
+    }
+   
+
     </script>
 </body>
 </html>
