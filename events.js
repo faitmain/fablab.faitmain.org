@@ -9,6 +9,11 @@ var events = [
    'type': 'meeting', 
    'title': 'le POOP', 
    'url': 'http://wiki.leloop.org/index.php/POOP'},
+   
+  {'date': '2013-06-17 13:30:00', 
+   'type': 'Conference', 
+   'title': 'Jérémie Zimmerman au FacLab', 
+   'url': 'http://www.faclab.org/venez-assister-a-la-conference-de-jeremie-zimmerman-au-faclab-le-17-juin/'},
 
   {'date': '2013-06-22 09:00:00', 
    'type': 'meeting', 
