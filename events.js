@@ -24,6 +24,21 @@ var events = [
    'type': 'meeting', 
    'title': 'Pas Sage En Seine', 
    'url': 'http://www.passageenseine.org/Passage/pses-2013'},
+   
+  {'date': '2013-06-28 09:00:00', 
+   'type': 'meeting', 
+   'title': 'ImaginesConstruis2013', 
+   'url': 'http://imagines-construis.bretagne.fr/'},
+   
+  {'date': '2013-06-29 09:00:00', 
+   'type': 'meeting', 
+   'title': 'ImaginesConstruis2013', 
+   'url': 'http://imagines-construis.bretagne.fr/'},
+
+  {'date': '2013-06-30 09:00:00', 
+   'type': 'meeting', 
+   'title': 'ImaginesConstruis2013', 
+   'url': 'http://imagines-construis.bretagne.fr/'},
 
   {'date': '2013-07-08 09:00:00', 
    'type': 'meeting', 
@@ -34,5 +49,7 @@ var events = [
    'type': 'meeting', 
    'title': 'OHM2013', 
    'url': 'https://ohm2013.org'},
+   
+
 ]
 
