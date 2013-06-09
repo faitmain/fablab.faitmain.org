@@ -20,7 +20,7 @@ var events = [
    'title': 'Laurent Ricard au FacLab', 
    'url': 'http://www.faclab.org/journee-innovation-fabrication-numerique-personnelle-et-entreprises/'},
    
-  {'date': '2013-06-17 17:00:00', 
+  {'date': '2013-06-21 17:00:00', 
    'type': 'Conference', 
    'title': "Les 24h de l'imprimante 3d", 
    'url': 'http://www.labsud.org/les-24-heures-de-limprimante-3d-du-dessin-a-lobjet-imprime/'},
