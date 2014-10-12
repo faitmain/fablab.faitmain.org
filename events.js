@@ -60,6 +60,11 @@ var events = [
    'title': 'OHM2013', 
    'url': 'https://ohm2013.org'},
    
+  {'date': '2014-10-16 20:00:00', 
+   'type': 'Animation', 
+   'title': 'Code Week 2014', 
+   'url': 'http://www.mips-lab.net/dates-ouverture-fablab/formation-python/code-week-initiation-python'},
+   
 
 ]
 
